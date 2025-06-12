@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weight Converter</h1>
+        <a href="/" class="back-link">Back to Home</a>
+        
+        <form method="post" action="/weight">
+            <div class="form-group">
+                <label for="value">Enter Value:</label>
+                <input type="number" id="value" name="value" step="any" required th:value="${value}" />
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fromUnit">From:</label>
+                    <select id="fromUnit" name="fromUnit" required>
+                        <option value="milligram" th:selected="${fromUnit == 'milligram'}">Milligram (mg)</option>
+                        <option value="gram" th:selected="${fromUnit == 'gram'}">Gram (g)</option>
+                        <option value="kilogram" th:selected="${fromUnit == 'kilogram'}">Kilogram (kg)</option>
+                        <option value="ounce" th:selected="${fromUnit == 'ounce'}">Ounce (oz)</option>
+                        <option value="pound" th:selected="${fromUnit == 'pound'}">Pound (lb)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toUnit">To:</label>
+                    <select id="toUnit" name="toUnit" required>
+                        <option value="milligram" th:selected="${toUnit == 'milligram'}">Milligram (mg)</option>
+                        <option value="gram" th:selected="${toUnit == 'gram'}">Gram (g)</option>
+                        <option value="kilogram" th:selected="${toUnit == 'kilogram'}">Kilogram (kg)</option>
+                        <option value="ounce" th:selected="${toUnit == 'ounce'}">Ounce (oz)</option>
+                        <option value="pound" th:selected="${toUnit == 'pound'}">Pound (lb)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="convert-btn">Convert</button>
+        </form>
+        
+        <div class="result" th:if="${result != null}">
+            <h2>Result:</h2>
+            <p>
+                <span th:text="${value}"></span> 
+                <span th:text="${fromUnit}"></span> = 
+                <span th:text="${#numbers.formatDecimal(result, 1, 'COMMA', 10, 'POINT')}"></span> 
+                <span th:text="${toUnit}"></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Unit Converter</h1>
+        <p>Select a conversion type:</p>
+        
+        <div class="conversion-types">
+            <a href="/length" class="conversion-card">
+                <h2>Length Converter</h2>
+                <p>Convert between millimeter, centimeter, meter, kilometer, inch, foot, yard, mile</p>
+            </a>
+            
+            <a href="/weight" class="conversion-card">
+                <h2>Weight Converter</h2>
+                <p>Convert between milligram, gram, kilogram, ounce, pound</p>
+            </a>
+            
+            <a href="/temperature" class="conversion-card">
+                <h2>Temperature Converter</h2>
+                <p>Convert between Celsius, Fahrenheit, Kelvin</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

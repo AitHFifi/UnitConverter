@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Run Unit Converter",
+			"command": "mvn spring-boot:run",
+			"group": "test",
+			"problemMatcher": [
+				"$javac"
+			]
+		}
+	]
+}
