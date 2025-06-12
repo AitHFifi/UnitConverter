@@ -30,10 +30,10 @@ This is a Java Spring Boot web application for converting between units of lengt
 
 ## Pictures
 
-![Home Page](image.png)
+![Home Page](/src/main/resources/images/image.png)
 
-![Lenght Converter](image-1.png)
+![Lenght Converter](/src/main/resources/images/image-1.png)
 
-![Weight Converter](image-2.png)
+![Weight Converter](/src/main/resources/images/image-2.png)
 
-![Temperature Converter](image-3.png)
+![Temperature Converter](/src/main/resources/images/image-3.png)
